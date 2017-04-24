@@ -3,12 +3,25 @@
 
 namespace Blogger\BlogBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Enquiry
 {
+    /**
+     * @Assert\NotBlank()
+     */
     protected $name;
+    /**
+     * @Assert\Email()
+     */
     protected $email;
+    /**
+     * @Assert\Length(max=50)
+     */
     protected $subject;
+    /**
+     * @Assert\Length(min=50)
+     */
     protected $body;
 
     /**
